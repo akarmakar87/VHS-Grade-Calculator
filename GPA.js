@@ -251,7 +251,7 @@ function findGrade(){
 	}
 	
 	var problem = false;
-	//
+	
 	if(isNaN(goal) || (goal < 0)){
 		var errorCSS = {
         	'border': '5px solid red'
