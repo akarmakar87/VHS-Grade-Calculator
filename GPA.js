@@ -1,4 +1,5 @@
 function calcGPA(){
+	
 	var classes = 0;
 	var total = 0;
 	var onlvlClasses = 0;
@@ -48,7 +49,7 @@ function calcGPA(){
 	}else{
 		finalwGPA = ((weightedGPA+currentGPA)/2).toFixed(3);
 	}
-	
+
 	if(isNaN(finalwGPA) == true){
 		finalwGPA = "";
 		var errorCSS = {
@@ -79,7 +80,6 @@ function calcGPA(){
 	var posCSS = {
 		'top' : 'pos'
 	}
-	//alert(pos);
 	$("#div3").css(posCSS);
 	$('#a1').html(String(finalwGPA));
 }
