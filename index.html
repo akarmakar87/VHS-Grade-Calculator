@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VHS Grade Calculator</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato|Vollkorn" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+	<link rel="stylesheet" href="GPA.css">
+	<script src="GPA.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div>
+		<h1 id="intro">VHS Grade Calculator</h1>
+		<p id="letter">This website was created with the purpose of helping Vandegrift students calculate their GPA and other aspects of their grade.<br><br>
+		If you are confused on how to fill out a certain section, click the information icon (ⓘ) for more specific instructions. I have tried to make them as accurate as possible but keep in mind that there still may be some errors.<br>
+		
+		<br>Sincerely,<br>Asha Karmakar</p>
+	</div>
+	<hr align="left" class="scone">
+
+		<div id="first" onclick="pgscroll('one');"><p class="bt">GPA Calculator</p></div><br>
+		<div id="second" onclick="pgscroll('two');"><p class="bt">Calculate Average</p></div><br>
+		<div id="third" onclick="pgscroll('three');"><p class="bt">Calculate Grade</p></div>
+
+	<div id="vright" align="right"></div>
+	
+	<!--<div class="v" id="v1"></div>-->
+	<div class="gradeDiv" id="div1">
+		<h1 id="firstcheck">GPA CALCULATOR:</h1>
+		<h3><b onclick="alert('Enter your current SEMESTER (not 6 weeks) class averages for all your enrolled classes.');">ⓘ</b> Enter your current semester averages:</h3>
+		<p>(Fill only as many boxes as the number of classes you have)</p>
+		<p class="error" id="1">PLEASE FILL AT LEAST ONE BOX WITH A VALID NUMBER</p>
+		<div id="redline">
+		<input type="text" class="grade" id="p1"></input>
+		<input type="text" class="grade" id="p2"></input>
+		<input type="text" class="grade" id="p3"></input   
+		<input type="text" class="grade" id="p4"></input>
+
+		<input type="text" class="grade" id="p5"></input>
+		<input type="text" class="grade" id="p6"></input>
+		<input type="text" class="grade" id="p7"></input>
+		<input type="text" class="grade" id="p8"></input>
+		</div>
+		<h3><b onclick="alert('Enter how many on-level, non-AP/Pre-AP classes you are enrolled in.');">ⓘ</b> Number of on-level classes:</h3>
+		<input type="text" class="grade" id="onlvlnum" placeholder="0"></input><br>
+		<h3><b onclick="alert('Since GPA is accumulative, in order to calculate your official GPA, you will need to provide your GPA from last semester. If you cannot provide it, then keep in mind that this GPA will not be very accurate.');">ⓘ</b> Current GPA (optional):</h3>
+		<p>(Your GPA when you received your last rank)</p>
+		<input type="text" class="grade" id="currGPA" placeholder=""></input><br>
+		<button type="button" onclick="calcGPA()" id="onebtn">Find GPA</button>
+		<button type="button" class="clr" onclick="location.reload()">Clear All</button>
+		<h3 id="wAvg">Weighted GPA: </h3>
+		<div class="b"><p class="a" id="a1"></p></div>
+	</div>
+	<hr align="left" class="scone" id="l1">
+	<div id="div3">
+	<h1 id="nextcheck">WHAT WILL MY AVERAGE BE AFTER A GRADE IS ENTERED?</h1>
+		<h3><b onclick="alert('EX: If the grade being entered is a homework grade and the homework category has a weight of 10%, enter 10 into the box.');">ⓘ</b> Weight of the category the grade is going into (%):<input style="display: inline;" type="text" class="grade" id="wantCat"></input></h3>
+		<h3><b onclick="alert('EX: Enter how many grades are currently listed in the category. If there are already three grades in the homework category, enter 3 into the box. Make sure that you ONLY enter the number of grades in the category, NOT INCLUDING the one that is about it go in.');">ⓘ</b> # of grades currently within category:<input style="display: inline;" type="text" class="grade" id="wantNum"></input></h3>
+		<h3><b onclick="alert('EX: If you scored an 80 on a homework and want to see how that will affect your overall class average, enter 80 into the box.');">ⓘ</b> Grade being entered:<input style="display: inline;" type="text" class="grade" id="wantGrade"></input></h3>
+		<table id="pt1">
+			<tr>
+				<td id="x"><h3>Weight(%)</h3></td>
+				<td><h3>Average <b onclick="alert('In this section, enter all the different weight categories you have for that class, and the category average for each one. For example, if you have the following categories: Homework(10%) + Tests(50%) + Quizzes(40%) for that class, enter 10, 40, and 50 into separate weight boxes. Then suppose you have a Homework average of 100, Tests average of 90, and Quizzes average of 85, enter 100, 90, and 85 next to the corresponding category weights.');">ⓘ</b></h3></td>
+			</tr>
+		</table>
+		<p class="error" id="2">ALL THE WEIGHTS SHOULD ADD UP TO 100 AND HAVE A POSITIVE NUMERICAL CATEGORY AVERAGE ENTERED NEXT TO EACH ONE</p>
+		<table id="t1">
+			<tr>
+				<td><input type="text" class="grade" id="w1" placeholder="Ex:10"></input></td>
+				<td><input type="text" class="grade" id="g1" placeholder="Ex:95"></input></td>
+			</tr>
+			<tr>
+				<td><input type="text" class="grade" id="w2"></input></td>
+				<td><input type="text" class="grade" id="g2"></input></td>
+			</tr>
+			<tr>
+				<td><input type="text" class="grade" id="w3"></input></td>
+				<td><input type="text" class="grade" id="g3"></input></td>
+			</tr>
+			<tr>
+				<td><input type="text" class="grade" id="w4"></input></td>
+				<td><input type="text" class="grade" id="g4"></input></td>
+			</tr>
+			<tr>
+				<td><input type="text" class="grade" id="w5"></input></td>
+				<td><input type="text" class="grade" id="g5"></input></td>
+			</tr>
+		</table>
+		<button type="button" id="twobtn" onclick="resultAvg();" style="font-size:14px;">CALCULATE</button>
+		<button type="button" class="clr" onclick="location.reload()">Clear All</button>
+		<h3 id="classAvg">Class Average: </h3>
+		<div class="b"><p class="a" id="a2"></p></div>
+	</div>
+	<!--<div class="v" id="v3"></div>--><br>
+	<hr align="left" class="scone">
+	<div id="div4">
+		<h1 id="lastcheck">WHAT GRADE DO I NEED IN ORDER FOR MY CLASS AVERAGE TO BE A(N) <input style="display: inline;" type="text" class="grade" id="goal" placeholder="Ex: 97"></input>?</h1>
+		<h3><b onclick="alert('EX: If the grade being entered is a homework grade and the homework category has a weight of 10%, enter 10 into the box.');">ⓘ</b> Weight of the category the grade will be in:<input style="display: inline;" type="text" class="grade" id="wantCat2"></input></h3>
+		<h3><b onclick="alert('EX: Enter how many grades are currently listed in the category. If there are already three grades in the homework category, enter 3 into the box. Make sure that you ONLY enter the number of grades in the category, NOT INCLUDING the one that is about it go in.');">ⓘ</b> # of grades currently within category:<input style="display: inline;" type="text" class="grade" id="wantNum2"></input></h3>		
+		<table>
+			<tr>
+				<td><h3>Weight(%)</p></td>
+				<td><h3>Average <b onclick="alert('In this section, enter all the different weight categories you have for that class, and the category average for each one. For example, if you have the following categories: Homework(10%) + Tests(50%) + Quizzes(40%) for that class, enter 10, 40, and 50 into separate weight boxes. Then suppose you have a Homework average of 100, Tests average of 90, and Quizzes average of 85, enter 100, 90, and 85 next to the corresponding category weights.');">ⓘ</b> </h3></td>
+			</tr>
+		</table>
+		<p class="error" id="3">ALL THE WEIGHTS SHOULD ADD UP TO 100 AND HAVE A POSITIVE NUMERICAL CATEGORY AVERAGE ENTERED NEXT TO EACH ONE</p>
+		<table id="t2">
+			<tr>
+				<td><input type="text" class="grade" id="c1"></input></td>
+				<td><input type="text" class="grade" id="s1"></input></td>
+			</tr>
+			<tr>
+				<td><input type="text" class="grade" id="c2"></input></td>
+				<td><input type="text" class="grade" id="s2"></input></td>
+			</tr>
+			<tr>
+				<td><input type="text" class="grade" id="c3"></input></td>
+				<td><input type="text" class="grade" id="s3"></input></td>
+			</tr>
+			<tr>
+				<td><input type="text" class="grade" id="c4"></input></td>
+				<td><input type="text" class="grade" id="s4"></input></td>
+			</tr>
+			<tr>
+				<td><input type="text" class="grade" id="c5"></input></td>
+				<td><input type="text" class="grade" id="s5"></input></td>
+			</tr>
+		</table>
+			<button type="button" onclick="findGrade()" style="font-size:14px;" id="threebtn">CALCULATE</button>
+			<button type="button" class="clr" onclick="location.reload()">Clear All</button>
+			<h3 id="gradeNeeded">Grade needed: </h3>
+			<div class="b"><p class="a" id="a3"></p></div>
+	</div>
+	<hr align="left" class="scone">
+</body>
+</html>

@@ -1,0 +1,163 @@
+body {
+	background: url('darkblue.jpg') no-repeat fixed center;
+	background-size: cover;
+	font-family: 'Lato', serif;
+	color: white;
+}
+#intro {
+	font-size:60px;
+	margin: 15px;
+}
+#letter {
+	font-size: 18px;
+	/*font-weight:bold;*/
+	font-family: 'Quicksand', sans-serif;
+	margin: 15px;
+	width:80%;
+	line-height:2.3;
+}
+h1 {
+	font-size: 25px;
+	border: 5px;
+	width:80%;
+}
+hr {
+	width:20%;
+	height: 3px;
+	border-radius:5px;
+	background-color:white;
+	left: 10px;
+}
+#div1, #div2, #div3, #div4{
+	display: inline-block;
+	padding:10px;
+	margin:7px;
+	border-radius: 15px;
+	float: top;
+}
+.error {
+	color:red;
+	font-weight: bold;
+	display:none;
+}
+#div1{
+	height:650px;
+	position:relative;
+	top: -50px;
+}
+#div3{
+	width:75%;
+	top:-20px;
+}
+#div2 {
+	color:#white;
+	font-size: 20px;
+	font-family: 'Lato', serif;
+	position:relative;
+	float: top;
+	height:700px;
+}
+.b{
+	border: 3px solid white;
+	border-radius:8px;
+	height: 100px;
+	width: 180px;
+	left: 50px;
+}
+.a{
+	font-size: 40px;
+	text-align: center;
+	top:0px;
+}
+.scone{
+	position:relative;
+}
+#l1{
+	top:-40px;
+}
+
+.v { 
+    border-left: 4px solid white;
+    width: 2px;
+	margin: 2px;
+    position: absolute;
+    float: left;
+	background-color:white;
+	border-radius:2px;
+}
+#v1 {
+	height: 635px;
+}
+#v2 {
+	height: 670px;
+}
+#v3 {
+	height: 650px;
+}	
+#vright {
+	border-right: 2px solid white;
+    width: 1px;
+    height:600px;
+	position:fixed;
+	right:20px;
+	top:20px;
+	position:fixed;
+	background-color:white;
+}
+.grade {
+	padding: 5px;
+	margin: 10px;
+	border-radius:5px;
+	width:50px;
+	background-color: white;
+	color:#29536C;
+	border:none;
+}
+.line {
+	border-left: 6px solid #dd8a80;
+    height: 500px;
+}
+button {
+	border-radius: 10px;
+	border: 3px solid white;
+	color: white;
+	background-color: transparent;
+	margin: 10px;
+	font-family: 'Lato', serif;
+	font-size: 20px;
+	width: 100px;
+	height: 35px;
+	font-weight:bold;
+}
+button:hover {
+	color: black;
+	background-color: white;
+}
+#first, #second, #third {
+	position: fixed;
+    right: 30px;
+	border: 3px solid white;
+	border-radius:8px;
+	height:50px;
+	width:100px;
+}
+#first:hover, #second:hover, #third:hover {
+	color: black;
+	font-weight:bold;
+	background-color: white;
+}
+.bt{
+	font-family: 'Quicksand', sans-serif;
+	text-align:center;
+	margin:2px;
+	top:5px;
+}
+#first {
+	top: 25%;
+}
+#second {
+	top: 50%;
+}
+#third {
+	top: 75%;
+}
