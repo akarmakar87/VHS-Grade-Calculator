@@ -1,5 +1,6 @@
 body {
-	background: url('darkblue.jpg') no-repeat fixed center;
+	/*background: url('darkblue.jpg') no-repeat fixed center;*/
+	background-color:black;
 	background-size: cover;
 	font-family: 'Lato', serif;
 	color: white;
