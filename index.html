@@ -45,8 +45,9 @@
 		<h3><b onclick="alert('Enter how many on-level, non-AP/Pre-AP classes you are enrolled in. If you do not enter a valid number, it will assume that NONE your classes are on-level.');">ⓘ</b> Number of on-level classes:</h3>
 		<input type="text" class="grade" id="onlvlnum" placeholder="0"></input><br>
 		<h3><b onclick="alert('Since GPA is accumulative, in order to calculate your official GPA, you will need to provide your GPA from last semester. If you cannot provide it, then keep in mind that this GPA will not be very accurate.');">ⓘ</b> Current GPA (optional):</h3>
-		<p>(Your GPA when you received your last rank)</p>
-		<input type="text" class="grade" id="currGPA" placeholder=""></input><br>
+		<p>(Your GPA when you received your last rank & Your current high school semester #, Ex: Currently in 10th grade first semester? = Semester #3)</p>
+		<input type="text" class="grade" id="currGPA" placeholder="GPA"></input>
+		<input type="text" class="grade" id="numSem" placeholder="#"></input><br>
 		<button type="button" onclick="calcGPA()" id="onebtn">Find GPA</button>
 		<button type="button" class="clr" onclick="location.reload()">Clear All</button>
 		<h3 id="wAvg">Weighted GPA: </h3>

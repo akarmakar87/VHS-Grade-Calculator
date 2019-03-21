@@ -4,6 +4,7 @@ function calcGPA(){
 	var total = 0;
 	var onlvlClasses = 0;
 	var currentGPA;
+	var sem = 2;
 	if (p1.value > 0 && !isNaN(p1.value)) {
 		classes += 1;
 		total += parseFloat(6 - (100 - p1.value)/10);
@@ -42,12 +43,15 @@ function calcGPA(){
 	if (currGPA.value > 0 && !isNaN(currGPA.value)) {
 		currentGPA = parseFloat(currGPA.value);
 	}
+	if (numSem.value > 0 && !isNaN(numSem.value)) {
+		sem = parseFloat(numSem.value);
+	}
 	var weightedGPA = (total - onlvlClasses)/classes;
 	var finalwGPA;
 	if (isNaN(currentGPA)){
 		finalwGPA = (weightedGPA).toFixed(4);
 	}else{
-		finalwGPA = ((weightedGPA+currentGPA)/2).toFixed(3);
+		finalwGPA = ((currentGPA*(sem-1)+weightedGPA)/sem).toFixed(3);
 	}
 
 	if(isNaN(finalwGPA) == true){
